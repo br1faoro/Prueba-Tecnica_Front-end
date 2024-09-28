@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { UsersSearchForm } from '@features/users/components';
+import { UsersSearchForm } from '@/features/users/components';
 import { validateSearch } from '@/utils/input-validations';
 
 jest.mock('@/utils/input-validations', () => ({

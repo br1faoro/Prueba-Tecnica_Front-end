@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { CardUser } from '@features/users/components';
+import { CardUser } from '@/features/users/components';
 import { formatDate } from '@/utils/dates';
 import { MOCK_USER } from '@tests/__mocks__';
 

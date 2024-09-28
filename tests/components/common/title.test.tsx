@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Title } from '@components/common';
+import { Title } from '@/components/common';
 
 describe('Title Component', () => {
   it('renders children correctly', () => {

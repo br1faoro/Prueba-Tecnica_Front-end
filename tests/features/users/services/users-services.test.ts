@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { TanStackQueryProvider } from '@/providers/tanstack-query-provider';
-import { useUserSearch, useUserDetailsByUsername } from '@features/users/services/users-services';
+import { useUserSearch, useUserDetailsByUsername } from '@/features/users/services/users-services';
 import { fetchUserDetailsByUsername, searchUsers } from '@users/api/users-api';
 import { SearchUsersResponse } from '@/features/users/types';
 import { MOCK_USER, MOCK_USER_ARRAY } from '@tests/__mocks__';

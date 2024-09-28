@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { fetchUserDetailsByUsername, searchUsers } from '@features/users/api/users-api';
+import { fetchUserDetailsByUsername, searchUsers } from '@/features/users/api/users-api';
 import { User, SearchUsersResponse } from '@/features/users/types';
 import { MOCK_USER, MOCK_USER_ARRAY } from '@tests/__mocks__';
 

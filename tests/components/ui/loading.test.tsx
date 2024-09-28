@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Loading } from '@components/ui';
+import { Loading } from '@/components/ui';
 import { STATES } from '@/constants/messages';
 
 describe('Loading Component', () => {

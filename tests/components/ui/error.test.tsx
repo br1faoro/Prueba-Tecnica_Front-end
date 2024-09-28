@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Error } from '@components/ui';
+import { Error } from '@/components/ui';
 import { STATES } from '@/constants/messages';
 
 describe('Error Component', () => {

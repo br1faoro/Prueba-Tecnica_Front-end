@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { UsersFollowersChart } from '@features/users/components';
+import { UsersFollowersChart } from '@/features/users/components';
 import { STATES } from '@/constants/messages';
 import { MOCK_USER_ARRAY } from '@tests/__mocks__';
 
