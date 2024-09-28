@@ -1,11 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import useGetUser from '@/features/users/hooks/use-get-user';
-import { Section, Title } from '@components/common';
+import { Section, Title } from '@/components/common';
 import { CardUser } from '@/features/users/components';
 import { Error, Loading } from '@/components/ui';
 import { PAGE_ROUTES as ROUTES } from '@/routes/page-routes';
 
-export default function UserDetailsPage() {
+const UserDetailsPage: React.FC = () => {
   const { username } = useParams<{ username: string }>();
   const { user, isLoading, error } = useGetUser(username!);
 
@@ -29,4 +29,6 @@ export default function UserDetailsPage() {
       {user && <CardUser user={user} />}
     </Section>
   );
-}
+};
+
+export default UserDetailsPage;
