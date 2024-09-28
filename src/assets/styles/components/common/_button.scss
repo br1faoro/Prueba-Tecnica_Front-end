@@ -1,0 +1,28 @@
+.button {
+  background-color: var(--yellow);
+  border-radius: 0.5rem;
+  border: 0;
+  color: var(--coal);
+  font-family: inherit;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background-color 250ms ease-in-out;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: var(--yellow-dark);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.55;
+
+    &:hover {
+      background-color: var(--yellow);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+:root {
+  --beige: #f9f4da;
+  --beight-light: hsla(0, 0%, 98%, 0.125);
+  --charcoal: #2b2b2b;
+  --coal-dark: hsla(300, 3%, 6%, 0.5);
+  --coal: #1a1a1a;
+  --red: #ff453a;
+  --yellow-dark: #c28e00;
+  --yellow: #fcba28;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--coal);
+  color: var(--beige);
+  font-family: monospace;
+  font-size: 16px;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}

@@ -1,0 +1,12 @@
+.loading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem;
+
+  &__mesage {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}

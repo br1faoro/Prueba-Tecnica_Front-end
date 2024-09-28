@@ -1,69 +1,50 @@
-# Prueba Técnica - Programador (Front-end)
+# React + TypeScript + Vite
 
-La siguiente es una prueba para evaluar a los postulantes a programador **Front-end**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## INTRODUCCIÓN
+Currently, two official plugins are available:
 
-Este repositorio contiene una serie de requerimientos de un Caso Práctico, que busca evaluar las capacidades técnicas del candidato con respecto a las principales funciones y responsabilidades que se requieren dentro del área de Desarrollo de Tecnología.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-#### ¿Qué se busca evaluar?
+## Expanding the ESLint configuration
 
-Principalmente los siguientes aspectos:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-+ Creatividad para resolver los requerimientos,
-+ Calidad del código entregado (estructura y buenas prácticas),
-+ Eficiencia de los algoritmos entregados,
-+ Familiaridad con Frameworks y plataformas de desarrollo Web.
+- Configure the top-level `parserOptions` property like this:
 
-## IMPORTANTE
-1. Asegúrate de tener `Node.js` y `npm` instalados.
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-2. Se solicita crear la aplicación utilizando estas tecnologías:
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-[React ](https://es.reactjs.org/)** + SCSS**
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-3. Se requiere de una **cuenta de GitHub** para realizar este ejercicio.
-
-4.  **Antes de comenzar a programar:**
-
-* Realizar un `Fork` de este repositorio (https://github.com/iseijasunow/Prueba-Tecnica_Front-end).
-* Clonar el fork a su máquina local `git clone git@github.com:USERNAME/FORKED-PROJECT.git`
-* Crear un `branch` en su cuenta de GitHub utilizando su nombre completo.
-
-5.  **Al finalizar**, existen 2 (dos) opciones para entregar su proyecto:
-
-* 1) Realizar un `Commit` de su proyecto, **enviar un `Pull Request` al branch con su NOMBRE**, y notificar a la siguiente dirección de correo electrónico [mrequena@unow.es](mailto:mrequena@unow.es).
-
-* 2) Crear un archivo comprimido (_.zip_ o _.rar_) de su proyecto y enviar a la siguiente dirección de correo electrónico [mrequena@unow.es](mailto:mrequena@unow.es).
-
-## EJERCICIO PRÁCTICO
-
-**Objetivo:** Crear una aplicación que ayude a obtener una lista de usuarios y muestre la información de sus perfiles, explotando el API Rest pública de GitHub https://api.github.com/search/users?q=YOUR_NAME. 
-
-**Nota** YOUR_NAME es un query string "parámetro"
-
- 
-#### Requerimientos generales
-
-1. La aplicación debe cumplir con los siguientes **requisitos funcionales:**
-
-- Crear una aplicación que incluya un campo de entrada texto y un botón, para que se pueda capturar el usuario y recuperar la información utilizando el API anteriormente indicada.
-
-- Mostrar los primeros 10 usuarios del resultado de la búsqueda, incluyendo su nombre de usuario (`'user.login'`) y el id (`'user.id'`) de cada registro.
-
-- Convertir cada Perfil de usuario en un enlace, para que al hacer clic en cada registro, navegue a una ruta que incluya la propiedad `'user.login'` como parámetro.
-
-- Crear un componente independiente en el que se lea el parámetro de la URL, y a continuación, obtenga los datos de dicho usuario mediante la siguiente API: https://api.github.com/users/YOUR_NAME
-
-- Incluir la imagen del usuario (`'avatar_url'`) y alguna otra información (de su elección) en el componente.
-
-- Incluir un validador que verifique que el texto de búsqueda de usuarios sea de un mínimo de 4 caracteres, y otro que NO permita realizar la búsqueda de la palabra **“iseijasunow”**.
-
-- Integrar cualquier librería de gráficos que pueda encontrar y crear un gráfico de barras simple para mostrar el número de seguidores de los 10 primeros usuarios.
-
-- Incluir un componente para mostrar mensajes de Errores Generales en toda la aplicación.
-
-2.  **CSS:** Utilizar CSS Grid y/o CSS Flexbox, para la maquetación del proyecto 
-
-3.  **Iconos:** Utilizar una librería para el manejo de iconos donde lo considere necesario (_se recomienda el uso de [Font Awesome](http://fontawesome.io/) o [Glyphicons](http://glyphicons.com/)._)
-
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```

@@ -1,0 +1,121 @@
+.table {
+  $table: &;
+
+  border-radius: 0.5rem;
+  border: 4px solid var(--charcoal);
+  box-shadow: 0 0 1rem #00000033;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0 0 1rem 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    min-width: 100%;
+    overflow-x: auto;
+  }
+
+  &__thead,
+  &__body {
+    overflow: hidden;
+  }
+
+  &__thead {
+    #{$table}__tr:first-child > #{$table}__th:first-child {
+      border-top-left-radius: 0.25rem;
+    }
+
+    #{$table}__tr:first-child > #{$table}__th:last-child {
+      border-top-right-radius: 0.25rem;
+    }
+  }
+
+  &__tbody {
+    #{$table}__tr:last-child > #{$table}__td:first-child {
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    #{$table}__tr:last-child > #{$table}__td:last-child {
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    #{$table}__tr > #{$table}__td:first-child {
+      background-color: var(--charcoal);
+      transition: background-color 250ms ease-in-out;
+    }
+
+    #{$table}__tr {
+      background-color: var(--coal);
+      transition: background-color 250ms ease-in-out;
+
+      &:hover {
+        background-color: var(--yellow);
+
+        #{$table}__td:first-child {
+          background-color: var(--yellow);
+        }
+
+        #{$table}__td,
+        #{$table}__link {
+          color: var(--coal);
+        }
+      }
+    }
+  }
+
+  &__tr {
+    animation-delay: calc(var(--delay, 0) * 20ms);
+    animation-duration: 100ms;
+    animation-fill-mode: both;
+    animation-name: animateIn;
+    animation-timing-function: ease-in-out;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__th,
+  &__td {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    padding: 0.25rem 0.5rem;
+    text-align: left;
+    vertical-align: middle;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__th {
+    background-color: var(--charcoal);
+  }
+
+  &__td {
+    border: 1px solid var(--charcoal);
+  }
+
+  &__link {
+    color: var(--yellow);
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 250ms ease-in-out;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
